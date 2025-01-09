@@ -11,13 +11,23 @@ def decompress_joblib(file):
 # Load your trained model
 model = decompress_joblib('random_forest_model.pkl.pbz2')
 
-# Inject custom CSS for styling
 st.markdown("""
     <style>
-    body {
+    /* Set the background for the entire Streamlit app */
+    .stApp {
+        background-color: #ffd6a5 !important; /* Warm peach background */
         font-family: Arial, sans-serif;
-        background-color: #ffd6a5; /* Warm peach background */
     }
+
+    /* Remove padding and margins at the top */
+    header {
+        visibility: hidden; /* Hide the header if any */
+    }
+    .block-container {
+        padding-top: 0 !important; /* Remove padding above the content */
+        margin-top: 0 !important;
+    }
+
     .container {
         max-width: 400px;
         margin: 50px auto;
@@ -26,22 +36,26 @@ st.markdown("""
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
+
     .title {
         text-align: center;
         font-weight: bold;
         font-size: 24px;
         margin-bottom: 10px;
     }
+
     .subtitle {
         text-align: center;
         font-size: 18px;
         margin-bottom: 20px;
     }
+
     label {
         display: block;
         margin-top: 10px;
         font-weight: bold;
     }
+
     input {
         width: 100%;
         padding: 8px;
@@ -50,6 +64,7 @@ st.markdown("""
         border: 1px solid #ddd;
         border-radius: 4px;
     }
+
     .button {
         background-color: #f08080;
         color: white;
@@ -62,9 +77,11 @@ st.markdown("""
         font-size: 16px;
         font-weight: bold;
     }
+
     .button:hover {
         background-color: #e57373;
     }
+
     .result {
         margin-top: 20px;
         font-size: 1.2em;
@@ -75,7 +92,6 @@ st.markdown("""
 
 # Main container
 st.markdown('<div class="container">', unsafe_allow_html=True)
-
 # Title and subtitle
 st.markdown('<div class="title">Air Prediction Level</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">WQD7006</div>', unsafe_allow_html=True)
